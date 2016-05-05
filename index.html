@@ -1,1 +1,23 @@
-Hello World
+Embedded Assembly
+
+Extended assembler
+__asm__ [volatile] [goto] (AssemblerTemplate
+                           [ : OutputOperands ]
+                           [ : InputOperands  ]
+                           [ : Clobbers       ]
+                           [ : GotoLabels     ]);
+
+the first optional qualifier is volatile. This specifier just tell the compiler
+to stop (optimization)
+
+the second optional qualifier is goto. The qualifier tells the compiler that
+the given assembly statement may perform a jump to one of the labels which are
+listed in GotoLabels.
+
+How to read assembly instructions:
+* names of processor registers must be prefixed with %%
+
+Clobbers is a list of registers or other values which are modified by the
+assembler instructions from the AssemblerTemplate beyond those listed in the
+OutputOperands.
+
